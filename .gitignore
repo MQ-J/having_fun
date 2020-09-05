@@ -1,5 +1,2 @@
-# Compiled source #
-###################
-/build/*
-!node.exe
+
 *.exe
