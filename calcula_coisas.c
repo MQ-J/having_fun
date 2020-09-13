@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <math.h>
+#include <time.h>
 
 /* VARIÁVEIS GERAIS*/
 char lc_all;
@@ -13,33 +14,41 @@ float num1;
 float num2;
 float soma;
 /*SUBTRAÇÃO*/
-float num9;
-float num10;
-float subtra;
-/*MULTIPLICAÇÃO*/
 float num3;
 float num4;
+float subtra;
+/*MULTIPLICAÇÃO*/
+float num5;
+float num6;
 float multipli;
 /*POTÊNCIA*/
-float num11;
-float num12;
+float num7;
+float num8;
 float poten;
 /*TRIANGULO A*/
 char menu2;
-float num5;
-float num6;
+float num9;
+float num10;
 float treco1;
 float triang1;
 /*TRIANGULO B*/
-float num7;
-float num8;
+float num11;
+float num12;
 float treco2;
 float triang2;
+/*NUMERO ALEATÓRIO*/
+int num13;
+int quant_aleatorio;  /*quantos numeros aleatórios serão mostrados na tela*/
+int limite_aleatorio; /*os numeros podem variar de 0 até este valor*/
+int variavel_for;            /*variável para a função for*/
 
 /* MENU GERAL */
 int main()
-{
+{	
 	inicio:
+		
+	srand(time(NULL)); /*função necessaria para o menu "numero aleatotio"*/
+		
 	system ("cls");
 	system ("color 0b");
 	system ("mode 60,50");
@@ -50,7 +59,8 @@ int main()
 	printf ("\n Subtração de dois números.......[digite b]");
 	printf ("\n Multiplicação de dois números...[digite c]");
 	printf ("\n Potência........................[digite d]");
-	printf ("\n Lados de triângulo..............[digite e]\n\n ");
+	printf ("\n Lados de triângulo..............[digite e]");
+	printf ("\n Números aleatórios..............[digite f]\n\n ");
 	fflush (stdin);
 	scanf ("%c", &menu1);
 	switch (menu1)
@@ -82,12 +92,12 @@ int main()
 	case 'b':
 			printf ("\n Digite o primeiro valor: ");
 			fflush (stdin);
-			scanf ("%f", &num9);
+			scanf ("%f", &num3);
 			printf (" Digite o segundo valor: ");
 			fflush (stdin);
-			scanf ("%f", &num10);
+			scanf ("%f", &num4);
 		/*CONTA SUBTRA*/
-			subtra = num9 - num10;
+			subtra = num3 - num4;
 			printf (" Resultado: %.2f", subtra);
 			/*volta*/
 			printf("\n\n Quer voltar? [s=sim] [n=não]\n\n ");
@@ -102,12 +112,12 @@ int main()
 		
 			printf("\n Digite o primeiro valor: ");
 			fflush (stdin);
-			scanf ("%f", &num3);
+			scanf ("%f", &num5);
 			printf (" Digite o segundo valor: ");
 			fflush (stdin);
-			scanf ("%f", &num4);
+			scanf ("%f", &num6);
 		/*CONTA MULTIPLI*/
-			multipli = num3 * num4;
+			multipli = num5 * num6;
 			printf (" Resultado: %.2f", multipli);
 			/*volta*/
 			printf("\n\n Quer voltar? [s=sim] [n=não]\n\n ");
@@ -122,12 +132,12 @@ int main()
 	case 'd':
 			printf("\n Digite a base: ");
 			fflush (stdin);
-			scanf ("%f", &num11);
+			scanf ("%f", &num7);
 			printf (" Digite o expoente: ");
 			fflush (stdin);
-			scanf ("%f", &num12);
+			scanf ("%f", &num8);
 		/*CONTA POTEN*/
-			poten = pow (num11 , num12);
+			poten = pow (num7 , num8);
 			printf (" Resultado: %.2f", poten);
 			/*volta*/
 			printf("\n\n Quer voltar? [s=sim] [n=não]\n\n ");
@@ -154,12 +164,12 @@ int main()
 				
 				printf ("\n Digite a hipotenusa: ");
 				fflush (stdin);
-				scanf ("%f", &num5);
+				scanf ("%f", &num9);
 				printf (" Digite o cateto: ");
 				fflush (stdin);
-				scanf ("%f", &num6);
+				scanf ("%f", &num10);
 		/*CONTA TRIANG1*/
-				treco1 = (num5 * num5) - (num6 * num6);
+				treco1 = (num9 * num9) - (num10 * num10);
 				triang1 = sqrt (treco1);
 				printf (" O outro cateto é: %.2f", triang1);
 			/*volta*/
@@ -180,12 +190,12 @@ int main()
 	
 				printf ("\n Digite um cateto: ");
 				fflush (stdin);
-				scanf ("%f", &num7);
+				scanf ("%f", &num11);
 				printf (" Digite o outro cateto: ");
 				fflush (stdin);
-				scanf ("%f", &num8);
+				scanf ("%f", &num12);
 		/*CONTA TRIANG2*/
-				treco2 = (num7*num7) + (num8*num8);
+				treco2 = (num11*num11) + (num12*num12);
 				triang2 = sqrt (treco2);
 				printf (" A Hipotenusa é: %.2f", triang2);
 			/*volta*/
@@ -215,6 +225,33 @@ int main()
 				}
 				exit (0);
 			}
+			
+	/*NÚMEROS ALEATÓRIOS*/
+	
+	case 'f':
+			printf("\n Digite Quantos números aleatórios voçê quer: ");
+			fflush (stdin);
+			scanf ("%i", &quant_aleatorio);
+			printf (" Digite até que número eles podem chegar: ");
+			fflush (stdin);
+			scanf ("%i", &limite_aleatorio);
+			/*CONTA ALEATÓRIO*/
+			quant_aleatorio = quant_aleatorio - 1;
+			limite_aleatorio = limite_aleatorio + 1;
+			for (variavel_for = 0; variavel_for <= quant_aleatorio; variavel_for++)
+			{
+				num13 = (rand() % limite_aleatorio);
+				Sleep (500);
+				printf("| %i |", num13);
+			}
+			/*volta*/
+			printf("\n\n Quer voltar? [s=sim] [n=não]\n\n ");
+			fflush (stdin);
+			scanf ("%c", &volta);
+			if (volta == 's')
+			goto inicio;
+			break;
+			
 	/*OPÇÃO INVÁLIDA PRINCIPAL*/
 	
 	default:
