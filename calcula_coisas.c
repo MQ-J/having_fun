@@ -41,13 +41,20 @@ int num13;
 int quant_aleatorio;  /*quantos numeros aleatórios serão mostrados na tela*/
 int limite_aleatorio; /*os numeros podem variar de 0 até este valor*/
 int variavel_for;            /*variável para a função for*/
+/*DIVISÃO*/
+float num14;
+float num15;
+float divis;
+/*HACK*/
+int hackeando;
+int hackeando2;
 
 /* MENU GERAL */
 int main()
 {	
 	inicio:
 		
-	srand(time(NULL)); /*função necessaria para o menu "numero aleatotio"*/
+	srand(time(NULL)); /*função necessaria para o menu "numero aleatório"*/
 		
 	system ("cls");
 	system ("color 0b");
@@ -55,12 +62,15 @@ int main()
 	setlocale (lc_all, "");
 	printf ("\n                      CALCULAR COISAS\n");
 	printf ("\n O que voçê quer fazer?");
-	printf ("\n Soma de dois números............[digite a]");
-	printf ("\n Subtração de dois números.......[digite b]");
-	printf ("\n Multiplicação de dois números...[digite c]");
-	printf ("\n Potência........................[digite d]");
-	printf ("\n Lados de triângulo..............[digite e]");
-	printf ("\n Números aleatórios..............[digite f]\n\n ");
+	printf ("\n Soma.................[digite a]");
+	printf ("\n Subtração............[digite b]");
+	printf ("\n Multiplicação........[digite c]");
+	printf ("\n Divisão..............[digite d]");
+	printf ("\n Potência.............[digite e]");
+	printf ("\n Lados de triângulo...[digite f]");
+	printf ("\n Números aleatórios...[digite g]\n");
+	printf ("\n Hackear a nasa.......[digite z]");
+	printf ("\n {impossivel parar se começar}\n\n");
 	fflush (stdin);
 	scanf ("%c", &menu1);
 	switch (menu1)
@@ -126,10 +136,29 @@ int main()
 			if (volta == 's')
 			goto inicio;
 			break;
+			
+	/* MENU DIVISÃO */
+	case 'd':
+			printf("\n Digite o primeiro valor: ");
+			fflush (stdin);
+			scanf ("%f", &num14);
+			printf (" Digite o segundo valor: ");
+			fflush (stdin);
+			scanf ("%f", &num15);
+		/*CONTA DIVISÃO*/
+			divis = num14 / num15;
+			printf (" Resultado: %.2f", divis);
+			/*volta*/
+			printf("\n\n Quer voltar? [s=sim] [n=não]\n\n ");
+			fflush (stdin);
+			scanf ("%c", &volta);
+			if (volta == 's')
+			goto inicio;
+			break;
 	
 	/* MENU POTÊNCIA */
 	
-	case 'd':
+	case 'e':
 			printf("\n Digite a base: ");
 			fflush (stdin);
 			scanf ("%f", &num7);
@@ -148,7 +177,7 @@ int main()
 			break;
 	/* MENU TRIÂNGULO */
 		 
-	case 'e':
+	case 'f':
 			menuTriang:
 			system("cls");
 			printf ( "\n O que voçê tem?");
@@ -168,6 +197,21 @@ int main()
 				printf (" Digite o cateto: ");
 				fflush (stdin);
 				scanf ("%f", &num10);
+			/*avisa de erro*/
+				if (num9 < num10)
+				{
+					printf("\n Não dá, sua hipotenusa é menor que o cateto");
+					printf("\n Quer voltar? [m = menu principal] [t = menu de triângulos]\n\n ");
+					fflush (stdin);
+					scanf ("%c", &volta);
+					if (volta == 'm')
+					goto inicio;
+					if (volta == 't')
+					{
+					goto menuTriang;
+					}
+					exit (0);
+				}
 		/*CONTA TRIANG1*/
 				treco1 = (num9 * num9) - (num10 * num10);
 				triang1 = sqrt (treco1);
@@ -226,9 +270,9 @@ int main()
 				exit (0);
 			}
 			
-	/*NÚMEROS ALEATÓRIOS*/
+	/* NÚMEROS ALEATÓRIOS */
 	
-	case 'f':
+	case 'g':
 			printf("\n Digite Quantos números aleatórios voçê quer: ");
 			fflush (stdin);
 			scanf ("%i", &quant_aleatorio);
@@ -252,14 +296,29 @@ int main()
 			goto inicio;
 			break;
 			
-	/*OPÇÃO INVÁLIDA PRINCIPAL*/
+	/* MENU HACK */
+	case 'z':
+			for (hackeando = 0; hackeando <= 100; hackeando++)
+			{
+				system("cls");
+				printf(" Carregando: ");
+				printf("%i", hackeando);
+				Sleep (100);
+			}
+			system("cls");
+			system("color 02");
+			do
+				printf("010011001010101100011100101010101111110001001101001010101001010101010000110000110110100111000011010101010");
+			while (hackeando = 100);
+			break;
+	/* OPÇÃO INVÁLIDA PRINCIPAL */
 	
 	default:
-				printf("\n\n Opção inválida! Quer voltar? [s=sim] [n=não]\n\n ");
-				fflush (stdin);
-				scanf ("%c", &volta);
-				if (volta == 's')
-				goto inicio;
+			printf("\n\n Opção inválida! Quer voltar? [s=sim] [n=não]\n\n ");
+			fflush (stdin);
+			scanf ("%c", &volta);
+			if (volta == 's')
+			goto inicio;
 		}
 	return 0;
 }
