@@ -1,49 +1,40 @@
 /*BIBLIOTECAS*/
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 
-/*VARI¡VEIS*/
+/*VARI√ÅVEIS*/
 char sexo;
 float altura, peso;
 
-/*COME«O*/
+/*FUN√á√ïES*/
+void pesomasc() /*calcula peso ideal masculino*/
+{
+  printf("\nQual a sua altura? [Use ponto no lugar da virgula]\n");
+  scanf("%f", &altura);
+  peso = (72.7 * altura) - 58;
+  printf("\nSeu peso ideal: %.2f\n", peso);
+}
+
+void pesofemi() /*calcula peso ideal feminino*/
+{
+  printf("\nQual a sua altura? [Use ponto no lugar da virgula]\n");
+  scanf("%f", &altura);
+  peso = (62.1 * altura) - 44.7;
+  printf("\nSeu peso ideal: %.2f\n", peso);
+}
+
 int main()
 {
-inicio:
-system("cls");
-printf("Calcule seu peso ideal");
-printf("\n\nDigite o seu sexo [m = masculino]  [f = feminino]\n");
-scanf("%c", &sexo);
-
-/*calcula peso ideal masculino*/
-
-switch (sexo)
-{
-case 'm': printf("\nQual a sua altura? [Use ponto no lugar da virgula]\n");
-scanf("%f", &altura);
-peso = (72.7 * altura) - 58;
-printf("\nSeu peso ideal: %.2f\n", peso);
-break;
-
-/*calcula peso ideal feminino*/
-
-case 'f': printf("\nQual a sua altura? [Use ponto no lugar da virgula]\n");
-scanf("%f", &altura);
-peso = (62.1 * altura) - 44.7;
-printf("\nSeu peso ideal: %.2f\n", peso);
-break;
-
-/*caso o usu·rio digite outra coisa*/
-
-default : printf("\nDado inv·lido\n");
-getch();
-goto inicio;
+  system("cls");
+  printf("Calcule seu peso ideal");
+  printf("\n\nDigite o seu sexo [m = masculino]  [f = feminino]\n");
+  scanf("%c", &sexo);
+  switch (sexo)
+  {
+    case 'm': pesomasc(); break;
+    case 'f': pesofemi(); break;
+    default : printf("\nDado inv√°lido\n"); system("pause"); main();
+  }
+  system("pause");
+  return 0;
 }
-
-/*FIM*/
-
-system("pause");
-return 0;
-}
-
