@@ -1,12 +1,12 @@
 # having_fun
 
 ENGLISH:
-  Things that i made in my free time. Usually in Portuguese.
-  for more explications, read the portuguese section.
+  Things that I made in my free time. Usually in Portuguese.
+  For more explications, read the portuguese section.
   
 PORTUGUÊS:
   Esses códigos foram feitos durante meu tempo livre.
-  a seguir uma explicação sobre cada um deles:
+  A seguir uma explicação sobre cada um deles:
   
     (calcula_coisas.c)
       Reune várias funçôes matemáticas como soma, multiplicação, potência e o teorema de Pitágoras.
