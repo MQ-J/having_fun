@@ -15,5 +15,5 @@ int main()
     a = (rand() % 9);
     printf("%c", vet[a]);
   }
-  return 0;
+  return (0);
 }
