@@ -29,3 +29,7 @@ PORTUGUÊS:
     (tenta_nome.c)
       Neste código você coloca os caracteres do seu nome em um vetor, e o programa escolhe
       aleatoriamente quais mostrar. A graça é jogar várias vezes até ver seu nome na tela.
+      
+    (contagem_regressiva_natal.c)
+      É feita uma contagem de quantos dias faltam para o natal chegar,
+      usando um ano bissexto como referência.
