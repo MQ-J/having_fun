@@ -23,6 +23,9 @@ PORTUGUÊS:
       Nesse código é simulado uma macha de um batalhão de exército, aonde são dados comandos de
       direita e esquerda volver, e final é visto para qual lado o batalhão estará olhando.
       
+    (escreva_coisas.java)
+      Meu primeiro programa em java, que pede que o usuário digite algo para mostrar na tela.
+      
     (formula_lady_gaga.c)
       Recebi uma vez uma fórmula matematica que, ao ser lida, soava como um trecho da música
       Bad Romance da Lady Gaga. Na hora quis fazer um código disso.
