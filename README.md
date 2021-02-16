@@ -33,6 +33,9 @@ PORTUGUÊS:
     (peso_ideal.c)
       Calcula o peso ideal do usuário de acordo com seu sexo e altura.
       
+    (soma.java)
+      Realiza soma simples, porém em JAVA!
+      
     (tenta_nome.c)
       Neste código você coloca os caracteres do seu nome em um vetor, e o programa escolhe
       aleatoriamente quais mostrar. A graça é jogar várias vezes até ver seu nome na tela.
