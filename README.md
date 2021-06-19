@@ -33,6 +33,9 @@ PORTUGUÊS:
     (peso_ideal.c)
       Calcula o peso ideal do usuário de acordo com seu sexo e altura.
       
+    (pizzaria_bolota.py)
+      Fiz a primeira versão desse código enquanto andava na rua a caminho do dentista. Era a prova de um amigo meu. em PYTHON!
+      
     (soma.java)
       Realiza soma simples, porém em JAVA!
       
